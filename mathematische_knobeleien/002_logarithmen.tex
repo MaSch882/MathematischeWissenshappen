@@ -1,0 +1,128 @@
+\documentclass[]{scrartcl}
+\usepackage{inputenc}
+\usepackage[german]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{stmaryrd}
+
+%opening
+\title{Mathematische Knobeleien}
+\subtitle{Teil 2 -- Logarithmen}
+\author{Mathematik - Verständlich gemacht!\footnote{Email: \href{mailto:kontakt@mschulte-mathematik.ruhr}{kontakt@mschulte-mathematik.ruhr}}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problemstellung}
+Es seien $a,b,c \in (0,\infty) \setminus \{1\}$. Bestimme den Wert von
+$$
+x = \frac{1}{1+\log_a(bc)} + \frac{1}{1+\log_b(ac)} + \frac{1}{1+\log_c(ab)}.
+$$
+
+\section*{Lösung}
+Wir benutzen die Formel 
+\begin{align*}
+	\log_a(x) = \frac{\log x}{\log a}, a \in (0,\infty) \setminus \{1\},
+	\tag{$\ast$}
+	\label{eq_nat_log}
+\end{align*}
+wobei $\log x$ der natürliche Logarithmus von $x$ ist.
+Damit ergibt sich 
+\begin{align*}
+	x 
+	& \overset{\eqref{eq_nat_log}}{=}
+	\frac{1}{1+\frac{\log(bc)}{\log a}} +
+	\frac{1}{1+\frac{\log(ac)}{\log b}} +
+	\frac{1}{1+\frac{\log(ab)}{\log c}}
+	\\ &= 
+	\frac{\log a}{\log a + \log(bc)} +
+	\frac{\log b}{\log b + \log(ac)} +
+	\frac{\log a}{\log c + \log(ab)}.
+\end{align*}
+Nun benutzen wir das Logarithmusgesetz
+\begin{align*}
+	\log x + \log y = \log(xy)
+	\tag{$\ast\ast$}, x,y > 0,
+	\label{eq_log_gesetz}
+\end{align*}
+und erhalten
+\begin{align*}
+	x 
+	& \overset{\eqref{eq_log_gesetz}}{=}
+	\frac{\log a}{\log(abc)} +
+	\frac{\log b}{\log(abc)} +
+	\frac{\log c}{\log(abc)} 
+	\overset{\eqref{eq_log_gesetz}}{=}
+	\frac{\log(abc)}{\log(abc)} = 1.
+\end{align*}
+
+\section*{Ergänzungen}
+\begin{itemize}
+	\item[1.]
+	{
+	Die Formel \eqref{eq_nat_log} ergibt sich wie folgt:
+	\begin{align*}
+		b = \log_a(x) 
+		& \Leftrightarrow
+		a^b = a^{\log_a(x)} = x
+		\\ & \Leftrightarrow
+		\log(a^b) =\log x
+		\\ & \Leftrightarrow
+		b \cdot \log a = \log x
+		\\ & \Leftrightarrow
+		b = \frac{\log x}{\log a}.
+	\end{align*}
+	Hierbei dürfen wir äquivalent umformen, da Potenzfunktionen 
+	und die natürliche Logarithmusfunktion bijektiv sind.
+	}
+	\item[2.]
+	{
+	Die Formel \eqref{eq_log_gesetz} sieht man beispielsweise 
+	wie folgt ein:
+	\begin{align*}
+		\log x + \log y = \log(xy) 
+		& \Leftrightarrow
+		e^{\log x + \log y} = e^{\log(xy)}
+		\\ & \Leftrightarrow
+		e^{\log x} \cdot e^{\log y} = xy 
+		\\ & \Leftrightarrow
+		x \cdot y = xy. ~ \checkmark
+	\end{align*}
+	Hier dürfen wir äquivalent umformen, da die natürliche 
+	Exponentialfunktion bijektiv ist und die Funktionalgleichung
+	$$
+	f(x+y) = f(x) \cdot f(y)
+	$$
+	erfüllt.
+	}
+	\item[3.]
+	{
+	Die Voraussetzung $a,b,c \neq 1$ erklärt sich dadurch, dass
+	Logarithmen zur Basis 1 keinen Sinn ergeben. So wäre 
+	$\log_1(x)$ die Lösung der Gleichung $1^x = b$; hier gibt 
+	es für $b \neq 1$ keine Lösung und für $b=1$ unendlich viele
+	Lösungen.
+	\newline 
+	Algebraisch können wir dies auch mit Formel \eqref{eq_nat_log}
+	einsehen:
+	$$
+	b = \log_1(x) \Leftrightarrow
+	b = \frac{\log x}{\log 1} = \frac{\log x}{0} = \infty. 
+	~ \lightning
+	$$
+	}
+\end{itemize}
+
+\section*{Quellen}
+Die Problemstellung entstammt aus
+
+\centering
+\textit{Heinrich Hemme: Heureka! Mathematische Rätsel 2023: Tageskalender mit Lösungen.
+	2022. München. Anaconda Verlag. ISBN 978-3-7306-1077-0.}
+
+\raggedright
+Es handelt sich um das Rätsel vom 15.03.2023.
+
+\end{document}
