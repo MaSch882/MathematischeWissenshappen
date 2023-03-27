@@ -1,0 +1,68 @@
+\documentclass{scrartcl}
+\usepackage{inputenc}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[ngerman]{babel}
+
+%opening
+\title{Mathematische Knobeleien}
+\subtitle{Teil 4 -- Eine goldene Münze}
+\author{Mathematik - Verständlich gemacht!\footnote{Email: \href{mailto:kontakt@mschulte-mathematik.ruhr}{kontakt@mschulte-mathematik.ruhr}}}
+
+\begin{document}
+
+\maketitle
+
+\section*{Problemstellung}
+Eine Münze $M$ wird derart gefälscht, dass die 
+Wahrscheinlichkeit, mit ihr zweimal hintereinander \textit{Kopf} zu 
+werfen, genauso groß ist, wie die Wahrscheinlichkeit, mit $M$ 
+\textit{Zahl} zu werfen. Wie groß ist die Wahrscheinlichkeit, mit 
+$M$ \textit{Kopf} zu werfen?
+
+\section*{Lösung}
+Es sei $\Omega := \{K, Z\}$. Für den Wurf von $M$ sei ein
+Wahrscheinlichkeitsmaß $\mathbb{P}$ auf $\Omega$ definiert durch
+$$
+\mathbb{P}(K) := x, ~ 
+\mathbb{P}(Z) := 1-x,
+$$
+mit $x \in [0,1]$. Wir suchen folglich den Wert von $x$.
+
+\noindent 
+Die Wahrscheinlichkeit, zweimal hintereinander \textit{Kopf} zu
+werfen ist dann gegeben durch
+$$
+\mathbb{P}(K) \cdot \mathbb{P}(K) = x^2,
+$$
+und soll gleich der Wahrscheinlichkeit sein, \textit{Zahl} zu
+werfen:
+$$
+x^2 = 1-x.
+$$
+Die Lösungen zu dieser Gleichung sind gegeben durch 
+$$
+x_{1/2} = \frac{-1 \pm \sqrt{5}}{2};
+$$
+wegen $x \in [0,1]$ folgt also $x = \frac{\sqrt{5}-1}{2}$.
+
+\noindent 
+Bezeichnen wir mit $\Phi := \frac{1+\sqrt{5}}{2}$ den 
+\textit{goldenen Schnitt}\footnote{
+\href{https://de.wikipedia.org/wiki/Goldener_Schnitt}
+{Wikipedia-Artikel zum goldenen Schnitt.}}, 
+so ist $x = \frac{1}{\Phi}$. 
+Daher ist unsere Münze eine \textit{goldene Münze}.
+
+\section*{Quellen}
+Die Problemstellung entstammt aus
+
+\centering
+\textit{Heinrich Hemme: Heureka! Mathematische Rätsel 2023: Tageskalender mit Lösungen.
+	2022. München. Anaconda Verlag. ISBN 978-3-7306-1077-0.}
+
+\raggedright
+Es handelt sich um das Rätsel vom 23.03.2023.
+
+\end{document}
